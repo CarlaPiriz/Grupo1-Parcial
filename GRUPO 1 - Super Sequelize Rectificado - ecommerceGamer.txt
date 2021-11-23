@@ -107,7 +107,6 @@ npx sequelize model:generate --name Detallefactura --attributes cantidad:integer
 
 npx sequelize model:generate --name Producto --attributes stock:string,desc:string,precio:string,nombre:string,prodimg:string,categoriaId:integer,marcaid:integer,detallefacturaId:integer
 
-npx sequelize model:generate --name Talle --attributes tipo:string,medidas:string,productoId:integer,producto_categoriaid:integer
 
 17- Se abren las migraciones que tienen clave foránea y se especidican las REFERENCES.
 
@@ -177,23 +176,6 @@ detallefacturacantidadId: {
       }
     },
 
-ARCHIVO TALLE
-
-productoId: {
-      type: Sequelize.INTEGER,
-      references: {
-        model: 'producto',
-        key: 'id'
-      }
-    },
-
-productocategoriaId: {
-      type: Sequelize.INTEGER,
-      references: {
-        model: 'categoria',
-        key: 'id'
-      }
-    },
 
 
 18 - SE ESTABLECEN EN CADA ARCHIVO DE MODELO LAS RELACIONES
