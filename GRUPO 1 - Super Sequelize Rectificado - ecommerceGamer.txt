@@ -212,7 +212,7 @@ factura.belongsTo(usuario, { as: 'usuarioid', constraints: false })
 
 ARCHIVO USUARIO
 
-usuario.hasOne(domicilio, { as: 'domicilioid', constraints: false })
+usuario.belongsTo(domicilio)
 
 ARCHIVO 
 
