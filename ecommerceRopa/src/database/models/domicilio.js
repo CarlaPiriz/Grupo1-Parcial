@@ -10,10 +10,15 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Domicilio.hasOne(models.usuario,);
     }
   };
   Domicilio.init({
+    domicilioid: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER},
     calle: DataTypes.STRING,
     numero: DataTypes.STRING,
     codigo_postal: DataTypes.STRING,

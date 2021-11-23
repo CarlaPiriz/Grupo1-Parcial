@@ -11,9 +11,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+
+      Usuario.belongsTo(models.domicilio)
+      Usuario.hasMany(models.factura)
+
     }
   };
   Usuario.init({
+    usuarioid: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER},
     name: DataTypes.STRING,
     dni: DataTypes.STRING,
     email: DataTypes.STRING,
