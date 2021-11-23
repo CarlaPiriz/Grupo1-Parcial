@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
      Producto.belongsToOne(models.marcaid)
      Producto.belongsTo(models.detallefacturaId)
+     Producto.hasMany(models.talle)
     }
   };
   Producto.init({
