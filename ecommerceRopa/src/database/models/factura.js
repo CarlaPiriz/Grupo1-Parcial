@@ -22,20 +22,8 @@ module.exports = (sequelize, DataTypes) => {
     fecha: DataTypes.STRING,
     tipo: DataTypes.STRING,
     total: DataTypes.STRING,
-    usuarioId: {
-      type: Sequelize.INTEGER,
-      references: {
-        model: 'usuario',
-        key: 'id'
-      }
-    },
-    puntodeventaId: {
-      type: Sequelize.INTEGER,
-      references: {
-        model: 'puntodeventa',
-        key: 'id'
-      }
-    },
+    usuarioId: DataTypes.INTEGER,
+    puntodeventaId: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Factura',

@@ -12,27 +12,18 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
 
-      Usuario.hasMany(models.domicilioId, {
-        foreignKey: {
-          name: 'domicilioId',
-          allowNull: false
-        }
-      })
-  };
+      Usuario.belongsTo(domicilio)
 
+
+    }
+  };
   Usuario.init({
     name: DataTypes.STRING,
     dni: DataTypes.STRING,
     email: DataTypes.STRING,
     contraseña: DataTypes.STRING,
     usuario: DataTypes.STRING,
-    domicilioId: {
-      type: Sequelize.INTEGER,
-      references: {
-        model: 'domicilio',
-        key: 'id'
-      }
-    },
+    domicilioId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Usuario',

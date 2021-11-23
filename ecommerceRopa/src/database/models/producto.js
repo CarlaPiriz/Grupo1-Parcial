@@ -19,27 +19,9 @@ module.exports = (sequelize, DataTypes) => {
     precio: DataTypes.STRING,
     nombre: DataTypes.STRING,
     prodimg: DataTypes.STRING,
-    categoriaId: {
-      type: Sequelize.INTEGER,
-      references: {
-        model: 'categoria',
-        key: 'id'
-      }
-    },
-    marcaid: {
-      type: Sequelize.INTEGER,
-      references: {
-        model: 'marca',
-        key: 'id'
-      }
-    },
-    detallefacturaId: {
-      type: Sequelize.INTEGER,
-      references: {
-        model: 'detallefactura',
-        key: 'id'
-      }
-    },
+    categoriaId: DataTypes.INTEGER,
+    marcaid: DataTypes.INTEGER,
+    detallefacturaId: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Producto',

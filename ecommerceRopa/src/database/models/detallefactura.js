@@ -17,13 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     cantidad: DataTypes.INTEGER,
     subtotal: DataTypes.STRING,
     total: DataTypes.STRING,
-    facturaId: {
-      type: Sequelize.INTEGER,
-      references: {
-        model: 'factura',
-        key: 'id'
-      }
-    },
+    facturaId: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Detallefactura',

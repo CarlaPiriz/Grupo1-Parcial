@@ -16,20 +16,8 @@ module.exports = (sequelize, DataTypes) => {
   Talle.init({
     tipo: DataTypes.STRING,
     medidas: DataTypes.STRING,
-    productoId: {
-      type: Sequelize.INTEGER,
-      references: {
-        model: 'producto',
-        key: 'id'
-      }
-    },
-    producto_categoriaid: {
-      type: Sequelize.INTEGER,
-      references: {
-        model: 'categoria',
-        key: 'id'
-      }
-    },
+    productoId: DataTypes.INTEGER,
+    producto_categoriaid: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Talle',
