@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     tipo: DataTypes.STRING,
     medidas: DataTypes.STRING,
     productoId: DataTypes.INTEGER,
-    producto_categoriaid: DataTypes.INTEGER,
+    producto_categoriaid: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Talle',

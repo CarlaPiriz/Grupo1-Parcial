@@ -1,31 +1,26 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Talles', {
+    await queryInterface.createTable('Detallefacturas', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      tipo: {
+      cantidad: {
+        type: Sequelize.INTEGER
+      },
+      subtotal: {
         type: Sequelize.STRING
       },
-      medidas: {
+      total: {
         type: Sequelize.STRING
       },
-      productoId: {
+      facturaId: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'producto',
-          key: 'id'
-        }
-      },
-  
-      producto_categoriaid: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'categoria',
+          model: 'facturas',
           key: 'id'
         }
       },
@@ -40,6 +35,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Talles');
+    await queryInterface.dropTable('Detallefacturas');
   }
 };

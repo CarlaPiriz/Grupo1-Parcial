@@ -118,7 +118,7 @@ ARCHIVO USUARIO
 domicilioId: {
       type: Sequelize.INTEGER,
       references: {
-        model: 'domicilio',
+        model: 'domicilios',
         key: 'id'
       }
     },
@@ -127,7 +127,7 @@ ARCHIVO FACTURA
 usuarioId: {
       type: Sequelize.INTEGER,
       references: {
-        model: 'usuario',
+        model: 'usuarios',
         key: 'id'
       }
     },
@@ -146,7 +146,7 @@ ARCHIVO DETALLEFACTURA
 facturaId: {
       type: Sequelize.INTEGER,
       references: {
-        model: 'factura',
+        model: 'facturas',
         key: 'id'
       }
     },
@@ -164,7 +164,7 @@ categoriaId: {
 marcaId: {
       type: Sequelize.INTEGER,
       references: {
-        model: 'marca',
+        model: 'marcas',
         key: 'id'
       }
     },
@@ -172,7 +172,7 @@ marcaId: {
 detallefacturacantidadId: {
       type: Sequelize.INTEGER,
       references: {
-        model: 'detallefactura',
+        model: 'detallefacturas',
         key: 'id'
       }
     },
@@ -182,7 +182,7 @@ ARCHIVO TALLE
 productoId: {
       type: Sequelize.INTEGER,
       references: {
-        model: 'producto',
+        model: 'productos',
         key: 'id'
       }
     },

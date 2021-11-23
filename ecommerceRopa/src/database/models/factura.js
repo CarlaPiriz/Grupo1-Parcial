@@ -2,7 +2,6 @@
 const {
   Model
 } = require('sequelize');
-const usuario = require('./usuario');
 module.exports = (sequelize, DataTypes) => {
   class Factura extends Model {
     /**
@@ -12,10 +11,6 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-
-      factura.belongsTo(usuario, { as: 'usuarioid', constraints: false })
-
-
     }
   };
   Factura.init({
@@ -23,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     tipo: DataTypes.STRING,
     total: DataTypes.STRING,
     usuarioId: DataTypes.INTEGER,
-    puntodeventaId: DataTypes.INTEGER,
+    puntodeventaId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Factura',
